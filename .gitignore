@@ -1,0 +1,24 @@
+# Bí mật
+.env
+**/.env
+*.key
+
+# Cấu hình Claude Code cá nhân
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+
+# Hệ điều hành / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json

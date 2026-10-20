@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "outputStyle": "Gia su Agentic",
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(date)",
+      "Bash(date *)",
+      "Bash(node .claude/hooks/session-start.js)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(**/.env)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-start.js",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
